@@ -1,0 +1,93 @@
+default:
+    image: docker:20-dind
+    services:
+        - docker:20-dind
+
+stages:
+    - build
+    - deploy
+
+docker-build:
+    stage: build
+    script:
+        - docker login -u gitlab-ci-token -p $REGISTRY_ACCESS_TOKEN $CI_REGISTRY
+        - docker build -t $CI_REGISTRY/znote9/znote-web:$CI_COMMIT_SHA .
+        - docker push $CI_REGISTRY/znote9/znote-web:$CI_COMMIT_SHA
+    tags:
+        - docker
+
+
+.deploy-base:
+    stage: deploy
+    variables:
+        DOCKER_HOST: $SSH_DOCKER_HOST
+    script:
+        - mkdir -p ~/.ssh
+        - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        - chmod -R 700 ~/.ssh
+        - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+        - chmod 644 ~/.ssh/known_hosts
+
+        - docker login -u gitlab-ci-token -p $REGISTRY_ACCESS_TOKEN $CI_REGISTRY
+        - docker stack deploy -c docker-compose.yml $DEPLOY_SERVICE_NAME --with-registry-auth
+    tags:
+        - docker
+
+# Manual deploy from branch feature/* or bugfix/* to znote-test
+deploy-test:
+    extends: .deploy-base
+    variables:
+        DEPLOY_SERVICE_NAME: znote-test-web
+    environment:
+        name: test
+        url:  https://znote-test.an9bit.ru
+    when: manual
+    only:
+        - /^feature\/.*/
+        - /^bugfix\/.*/
+
+# Auto deploy develop to znote-dev
+deploy-dev:
+    extends: .deploy-base
+    variables:
+        DEPLOY_SERVICE_NAME: znote-dev-web
+    environment:
+        name: dev
+        url:  https://znote-dev.an9bit.ru
+    only:
+        - develop
+
+# Manual deploy develop to znote-state
+deploy-stage:
+    extends: .deploy-base
+    variables:
+        DEPLOY_SERVICE_NAME: znote-stage-web
+    environment:
+        name: stage
+        url:  https:///znote-stage.an9bit.ru
+    when: manual
+    only:
+        - develop
+
+# Auto deploy master to znote-master
+deploy-master:
+    extends: .deploy-base
+    variables:
+        DEPLOY_SERVICE_NAME: znote-master-web
+    environment:
+        name: master
+        url:  https:///znote-master.an9bit.ru
+    only:
+        - master
+
+# Manual deploy master to znote
+deploy-prod:
+    extends: .deploy-base
+    variables:
+        DEPLOY_SERVICE_NAME: znote-prod-web
+    environment:
+        name: prod
+        url:  https://znote.an9bit.ru
+    when: manual
+    only:
+        - master

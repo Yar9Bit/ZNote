@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+    znote-web:
+        image: $CI_REGISTRY/znote9/znote-web:$CI_COMMIT_SHA
+        deploy:
+            replicas: 1
+            restart_policy:
+                condition: on-failure
+        ports:
+            - "$LISTEN_PORT:80"
