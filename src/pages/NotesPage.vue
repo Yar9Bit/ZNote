@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="notes-page">
     <h2>Add note</h2>
     <AddNoteItem @added="reloadNotesList"/>
     <h2>Notes List</h2>

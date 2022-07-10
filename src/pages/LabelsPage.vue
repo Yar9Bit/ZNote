@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="labels-page">
     <h2>Add label</h2>
     <AddLabelItem @added="reloadLabelsList"/>
     <h2>Labels List</h2>
