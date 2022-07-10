@@ -14,17 +14,23 @@ html{
 }
 
 #navbar-nav{
-  padding: 0 15px;
+  padding: 0 30px;
   font-size: 20px;
 }
 
 #navbar-nav:hover{
   display: block;
+  color: red;
   background-color: indianred;
   border-radius: 25px;
-  box-shadow: 10px 5px 16px aqua;
+  box-shadow: 0 0 10px aqua;
 }
 
 #main{
   margin: 15px 30px;
 }
+
+
+
+/* Завершить верстку главной страницы. Заняться версткой Notes и Labels
+*/
