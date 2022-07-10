@@ -1,5 +1,5 @@
 <template>
-  <div id="main" class="hello">
+  <div class="hello">
     <h1>It's working!</h1>
     <template v-if="!!text">
       <p>Text: {{ text }}</p>
