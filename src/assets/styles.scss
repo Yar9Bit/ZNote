@@ -7,12 +7,17 @@ html{
   outline: 0;
 }
 
+#app{
+  animation-duration: 3s;
+  animation-name: slide;
+}
+
 #main{
   margin: 15px 30px;
 }
 
 #navbar{
-  background-color: darkgreen;
+  background-color: darkslategrey;
   flex-wrap: wrap;
   font-style: italic;
   height: auto;
@@ -26,21 +31,32 @@ html{
 
 #navbar-item:hover{
   display: block;
-  background-color: red;
-  border-radius: 15px;
-  border: black 2px solid;
-  box-shadow: 10px 5px 16px aqua;
+  background-color: green;
+  border-radius: 50px;
+  box-shadow: 10px 5px 16px red;
 }
 
 @media screen and (max-width: 320px), (max-width: 640px), (max-width: 960px){
   html {
-    font-size: 28pt;
+    font-size: 22pt;
   }
 }
 
 @media screen and (min-width: 1080px){
   html {
     font-size: 14pt;
+  }
+}
+
+@keyframes slide {
+  from {
+    margin-top: 100%;
+    width: 50%;
+  }
+
+  to {
+    margin-top: 0;
+    width: 100%;
   }
 }
 
