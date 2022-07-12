@@ -8,8 +8,9 @@ html{
 }
 
 #app{
-  animation-duration: 3s;
+  animation-duration: 1500ms;
   animation-name: slide;
+  animation-direction: normal;
 }
 
 #main{
@@ -36,7 +37,7 @@ html{
   box-shadow: 10px 5px 16px red;
 }
 
-@media screen and (max-width: 320px), (max-width: 640px), (max-width: 960px){
+@media screen and (max-width: 320px), (max-width: 640px), (max-width: 968px){
   html {
     font-size: 22pt;
   }
@@ -50,12 +51,11 @@ html{
 
 @keyframes slide {
   from {
-    margin-top: 100%;
-    width: 50%;
+    width: 0;
+    background-color: gray;
   }
 
   to {
-    margin-top: 0;
     width: 100%;
   }
 }
