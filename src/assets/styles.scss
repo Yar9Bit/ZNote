@@ -5,10 +5,12 @@ html{
   padding: 0;
   border: 0;
   outline: 0;
+  overflow: hidden;
+  touch-action: auto;
 }
 
 #app{
-  animation-duration: 1500ms;
+  animation-duration: 2s;
   animation-name: slide;
   animation-direction: normal;
 }
@@ -51,8 +53,9 @@ html{
 
 @keyframes slide {
   from {
-    width: 0;
+    width: 200px;
     background-color: gray;
+    filter: blur(10px);
   }
 
   to {
