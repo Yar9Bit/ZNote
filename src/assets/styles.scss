@@ -7,26 +7,41 @@ html{
   outline: 0;
 }
 
+#main{
+  margin: 15px 30px;
+}
+
 #navbar{
   background-color: darkgreen;
   flex-wrap: wrap;
   font-style: italic;
+  height: auto;
 }
 
-#navbar-nav{
-  padding: 0 15px;
-  font-size: 20px;
+#navbar-item{
+  padding: 0 25px;
+  font-size: 22px;
+  box-sizing: border-box;
 }
 
-#navbar-nav:hover{
+#navbar-item:hover{
   display: block;
-  background-color: indianred;
-  border-radius: 25px;
+  background-color: red;
+  border-radius: 15px;
+  border: black 2px solid;
   box-shadow: 10px 5px 16px aqua;
 }
 
-#main{
-  margin: 15px 30px;
+@media screen and (max-width: 320px), (max-width: 640px), (max-width: 960px){
+  html {
+    font-size: 28pt;
+  }
+}
+
+@media screen and (min-width: 1080px){
+  html {
+    font-size: 14pt;
+  }
 }
 
 /* Доделать верстку, шрифты и навести красоту
