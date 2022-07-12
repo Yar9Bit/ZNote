@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fc6f9a2-538e-471e-b406-485a458ed360" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/dist/css/app.f90d451f.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +78,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.serve" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -96,7 +97,7 @@
       <workItem from="1656916827472" duration="2328000" />
       <workItem from="1657455583049" duration="13866000" />
       <workItem from="1657615661783" duration="4717000" />
-      <workItem from="1657627658666" duration="9641000" />
+      <workItem from="1657627658666" duration="10619000" />
     </task>
     <task id="LOCAL-00001" summary="#1">
       <created>1656774174990</created>
