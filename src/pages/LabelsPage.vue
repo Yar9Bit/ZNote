@@ -1,6 +1,6 @@
 <template>
   <div id="labels-page">
-    <h2>Add label</h2>
+    <h2>Add Label</h2>
     <AddLabelItem @added="reloadLabelsList"/>
     <h2>Labels List</h2>
     <LabelsListItem ref="labelsList" @selected="selectedLabel=$event"/>
@@ -32,4 +32,7 @@ export default {
 </script>
 
 <style scoped>
+#labels-page{
+  padding: 30px 10px;
+}
 </style>

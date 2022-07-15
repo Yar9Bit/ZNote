@@ -1,6 +1,6 @@
 <template>
   <div id="notes-page">
-    <h2>Add note</h2>
+    <h2>Add Note</h2>
     <AddNoteItem @added="reloadNotesList"/>
     <h2>Notes List</h2>
     <NotesListItem ref="notesList" @selected="selectedNote=$event"/>
@@ -32,4 +32,7 @@ export default {
 </script>
 
 <style scoped>
+#notes-page{
+  padding: 30px 10px;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div id="main" class="hello">
-    <h1>It's working!</h1>
+    <h1>ZNote</h1>
     <template v-if="!!text">
       <p>Text: {{ text }}</p>
       <b-button variant="danger">Click</b-button>
