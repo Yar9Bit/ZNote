@@ -1,10 +1,11 @@
 <template>
   <div>
-    <b-button v-b-modal.addNoteModalDialog variant="primary">Add Note</b-button>
-    <b-modal id="addNoteModalDialog" title="Add Note" @ok="addNote">
+    <b-button v-b-modal.addNoteModalDialog variant="success" size="sm">Add Note</b-button>
+    <b-modal id="addNoteModalDialog" title="Add Note" body-text-variant="primary" header-bg-variant="success"
+             footer-bg-variant="success" @ok="addNote">
       <label>Subject</label>
       <b-form-input v-model="note.subject" type="text" placeholder="Enter note subject"/>
-      <label>Note text</label>
+      <label>Note Text</label>
       <b-form-textarea v-model="note.text" placeholder="Enter note text"/>
     </b-modal>
   </div>

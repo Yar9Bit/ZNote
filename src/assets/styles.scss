@@ -6,7 +6,6 @@ html{
   border: 0;
   outline: 0;
   overflow: hidden;
-  touch-action: auto;
 }
 
 #app{
@@ -34,9 +33,9 @@ html{
 
 #navbar-item:hover{
   display: block;
-  background-color: green;
+  background-color: lightblue;
   border-radius: 50px;
-  box-shadow: 10px 5px 16px red;
+  box-shadow: 10px 5px 16px lightgreen;
 }
 
 @media screen and (max-width: 320px), (max-width: 640px), (max-width: 968px){

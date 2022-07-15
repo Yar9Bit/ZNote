@@ -1,6 +1,6 @@
 <template>
-  <b-button v-if="user===undefined || user.isAnonymous===true" href="/api/auth/authorize_google">Login</b-button>
-  <b-button v-else @click="logout">Logout - {{ user.nickname }}</b-button>
+  <b-button pill variant="success" v-if="user===undefined || user.isAnonymous===true" href="/api/auth/authorize_google">Login</b-button>
+  <b-button pill variant="danger"  v-else @click="logout">Logout - {{ user.nickname }}</b-button>
 </template>
 
 <script>
